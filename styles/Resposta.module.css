@@ -1,0 +1,87 @@
+.resposta{
+    display:  flex;
+    height: 100px;
+    min-width: 500px;
+    width: 80%;
+    margin: 10px;
+    transition:  all .2s ease-in-out;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.resposta:hover{
+    transform: scale(1.2);
+}
+
+
+
+.conteudoResposta{
+    position: relative;
+    display: flex;
+    flex:1;
+    transition:transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.conteudoResposta.respostaRevelada{
+    transform:rotateY(180deg); /* fazer rotação de 180 graus*/
+}
+
+.frente, .verso{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.verso > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: 12px;
+}
+
+.certa .valor, .errada .valor{
+    font-size: 1.5rem;
+}
+
+.certa{
+    background-color: #2baa6d;
+}
+
+.errada{
+    background-color: #e44A4C;
+}
+
+.frente{
+    align-items: center;
+    border-radius: 12px;
+    padding: 15px;
+    color: #000;
+    background-color: #fff;
+}
+
+.verso{
+    transform:rotateY(180deg)
+}
+
+.letra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    margin-right: 20px;
+    font-weight: 700; /* negrito */
+    color:#fff
+}
+.valor{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
